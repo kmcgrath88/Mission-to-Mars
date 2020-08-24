@@ -1,5 +1,6 @@
 from splinter import Browser
 from bs4 import BeautifulSoup as bs
+import pandas as pd
 import time
 from flask import Flask, render_template, redirect
 from flask_pymongo import PyMongo
@@ -17,6 +18,7 @@ def init_browser():
     return Browser("chrome", **executable_path, headless=False)
 
 def scrape():
+    data_dict = {}
     browser = init_browser()
 
     #NASA Mars New Site
@@ -30,9 +32,12 @@ def scrape():
     soup = bs(html, "html.parser")
 
     #Get the latest news title and text
+    news_data = {}
     article = soup.find('div', class_= 'list_text')
-    news_title = article.find('a').text 
-    news_p = article.find('div', class_ = 'article_teaser_body').text
+    news_data['article title'] = article.find('a').text
+    news_data['article text'] = article.find('div', class_ = 'article_teaser_body').text
+    # news_title = article.find('a').text 
+    # news_p = article.find('div', class_ = 'article_teaser_body').text
     
     #JPL Mars Space Images - Featured Image
     executable_path = {'executable_path': 'chromedriver.exe'}
@@ -41,7 +46,13 @@ def scrape():
     url2 = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url2)
 
-    featured_image_url = 'https://www.jpl.nasa.gov' + image_url
+    html = browser.html
+    soup = bs(html, 'html.parser')
+
+    image = soup.find('footer')
+    image_url = image.a['data-fancybox-href']
+
+    featured_image_url = 'https://www.jpl.nasa.gov' + image_url # --- add to dictionary??
 
     #Mars Facts
     mars_facts_url = 'https://space-facts.com/mars/'
