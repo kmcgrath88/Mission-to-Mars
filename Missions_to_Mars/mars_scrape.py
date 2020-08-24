@@ -56,10 +56,7 @@ def scrape():
 
     html_table = mars_facts_table_df.to_html(classes = 'table table-striped') 
     html_table = html_table.replace('\n', '')
-    # mars_facts_table_df.to_html('table.html')
     mars_dict.update({'Mars_Facts_Table': html_table})
-
-    
 
     #Mars Hemispheres
     executable_path = {'executable_path': 'chromedriver.exe'}
