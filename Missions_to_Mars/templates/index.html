@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Hot Finds</title>
+  <title>Mars Facts</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
@@ -17,12 +17,18 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
 
-    <!-- Craigslist Listings -->
-    <div class="row" id="....">
+    <!-- Mars Data -->
+    <div class="row" >
+      <div class = 'col-md-12'>
+        <h1>Latest Mars News</h1>
+        <strong>{{ mars_data.article_title}}</strong>
+        {{ mars_data.article_text}}
+      </div>
       <div class="col-md-12">
-        <h4 class="heading">{{news_data.title}} {{news_data.text}}</h4> <!--change this-->
+      {{ mars_data.Mars_Facts_Table | safe }}
         
       </div>
+      <img src="{{ mars_data.Hemispheres[0].img_url }}" alt="Sloth">
     </div>
 
   </div>
