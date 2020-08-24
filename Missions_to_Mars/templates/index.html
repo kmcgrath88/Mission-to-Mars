@@ -11,27 +11,30 @@
 
 <body>
   <div class="container">
-
+    <!--Heading and button to scrape data-->
     <div class="jumbotron text-center">
-      <h1>Mission to Mars</h1>
+      <h1><strong>Mission to Mars</strong></h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
 
     <!-- Mars Data -->
     <div class= 'row' >
       <div class = 'col-md-12'>
-        <strong><h1>Latest Mars News</h1></strong>
-        <strong>{{ mars_data.article_title}}</strong> <br>
+        <h2><strong>Latest Mars News</strong></h2>
+        <strong>{{ mars_data.article_title}}</strong>
+        <br>
         {{ mars_data.article_text}}
       </div>
       <div class = 'col-md-8'>
-        <strong><h1>Featured Mars Image</h1></strong>
+        <h2><strong>Featured Mars Image</strong></h2>
         <img src="{{ mars_data.Mars_Image }}" alt="Featured Mars Image">
       </div>
       <div class="col-md-4">
-        <h3>Mars Facts</h3>
+        <h4><strong>Mars Facts</strong></h4>
       {{ mars_data.Mars_Facts_Table | safe }}
       </div>
+      <br>
+      <h2></h2>
       <div class = 'col-md-6'>
         <div class="thumbnail"> <img src="{{ mars_data.Hemispheres[0].img_url }}" width = 100% alt="Cerberus Hemisphere Enhanced">
         <div class="card-body">
