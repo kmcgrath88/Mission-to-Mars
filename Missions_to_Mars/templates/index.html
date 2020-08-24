@@ -18,18 +18,52 @@
     </div>
 
     <!-- Mars Data -->
-    <div class="row" >
+    <div class= 'row' >
       <div class = 'col-md-12'>
-        <h1>Latest Mars News</h1>
-        <strong>{{ mars_data.article_title}}</strong>
+        <strong><h1>Latest Mars News</h1></strong>
+        <strong>{{ mars_data.article_title}}</strong> <br>
         {{ mars_data.article_text}}
       </div>
-      <div class="col-md-12">
-      {{ mars_data.Mars_Facts_Table | safe }}
-        
+      <div class = 'col-md-8'>
+        <strong><h1>Featured Mars Image</h1></strong>
+        <img src="{{ mars_data.Mars_Image }}" alt="Featured Mars Image">
       </div>
-      <img src="{{ mars_data.Hemispheres[0].img_url }}" alt="Sloth">
+      <div class="col-md-4">
+        <h3>Mars Facts</h3>
+      {{ mars_data.Mars_Facts_Table | safe }}
+      </div>
+      <div class = 'col-md-6'>
+        <div class="thumbnail"> <img src="{{ mars_data.Hemispheres[0].img_url }}" width = 100% alt="Cerberus Hemisphere Enhanced">
+        <div class="card-body">
+          <h2 class="card-text">{{ mars_data.Hemispheres[0].title }}</h2>
+        </div>
+      </div>
+  
     </div>
+    <div class = 'col-md-6'>
+        <div class="thumbnail"><img src="{{ mars_data.Hemispheres[1].img_url }}" width = 100% alt="Schiaparelli Hemisphere Enhanced">
+        <div class="card-body">
+          <h2 class="card-text">{{ mars_data.Hemispheres[1].title }}</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class = 'col-md-6'>
+      <div class="thumbnail"><img src="{{ mars_data.Hemispheres[2].img_url }}" width = 100% alt="Syrtis Major Hemisphere Enhanced">
+      <div class="card-body">
+        <h2 class="card-text">{{ mars_data.Hemispheres[2].title }}</h2>
+      </div>
+    </div>
+    </div>
+    <div class = 'col-md-6'>
+      <div class="thumbnail"><img src="{{ mars_data.Hemispheres[3].img_url }}" width = 100% alt="Valles Marineris Hemisphere Enhanced">
+      <div class="card-body">
+        <h2 class="card-text">{{ mars_data.Hemispheres[3].title }}</h2>
+      </div>
+    </div>
+
+  </div>
+
 
   </div>
 </body>
