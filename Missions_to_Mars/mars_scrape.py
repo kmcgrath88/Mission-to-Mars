@@ -18,7 +18,7 @@ def init_browser():
     return Browser("chrome", **executable_path, headless=False)
 
 def scrape():
-    data_dict = {}
+    data_dict = {} # --- create dictionary
     browser = init_browser()
 
     #NASA Mars New Site
@@ -36,6 +36,7 @@ def scrape():
     article = soup.find('div', class_= 'list_text')
     news_data['article title'] = article.find('a').text
     news_data['article text'] = article.find('div', class_ = 'article_teaser_body').text
+    data_dict.update(news_data)
     # news_title = article.find('a').text 
     # news_p = article.find('div', class_ = 'article_teaser_body').text
     
@@ -53,6 +54,7 @@ def scrape():
     image_url = image.a['data-fancybox-href']
 
     featured_image_url = 'https://www.jpl.nasa.gov' + image_url # --- add to dictionary??
+    data_dict.update({'Mars Image': featured_image_url})
 
     #Mars Facts
     mars_facts_url = 'https://space-facts.com/mars/'
@@ -62,7 +64,8 @@ def scrape():
     mars_facts_table_df = mars_facts_table.rename(columns={0: 'Description', 1: 'Mars'}) 
     mars_facts_table_df = mars_facts_table_df.set_index('Description')
 
-    html_table = mars_facts_table_df.to_html()
+    html_table = mars_facts_table_df.to_html() # --- add to dictionary??
+    data_dict.update({'Mars Facts Table': html_table})
 
     # html_table.replace('\n', '')
     # df.to_html('table.html')
@@ -103,10 +106,11 @@ def scrape():
         browser.back()
 
         # Quite the browser after scraping
+    data_dict.update({'Hemisphers': hemisphere_image_urls})
     browser.quit()
 
     # Return results
-    return
+    return data_dict
 
 
 
