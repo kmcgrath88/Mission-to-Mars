@@ -31,8 +31,8 @@ def scrape():
 
     
     #JPL Mars Space Images - Featured Image
-    executable_path = {'executable_path': 'chromedriver.exe'}
-    browser = Browser('chrome', **executable_path, headless=False)
+    # executable_path = {'executable_path': 'chromedriver.exe'}
+    # browser = Browser('chrome', **executable_path, headless=False)
 
     url2 = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
     browser.visit(url2)
@@ -59,8 +59,8 @@ def scrape():
     mars_dict.update({'Mars_Facts_Table': html_table})
 
     #Mars Hemispheres
-    executable_path = {'executable_path': 'chromedriver.exe'}
-    browser = Browser('chrome', **executable_path, headless=False)
+    # executable_path = {'executable_path': 'chromedriver.exe'}
+    # browser = Browser('chrome', **executable_path, headless=False)
 
     hemisphere_url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(hemisphere_url)
@@ -93,11 +93,13 @@ def scrape():
         #Navigate back
         browser.back()
 
-        # Quite the browser after scraping
+        
     mars_dict.update({'Hemispheres': hemisphere_image_urls})
+
+    #Quit the browser after scraping
     browser.quit()
 
-    # Return results
+    #Return results
     return mars_dict
 
 
