@@ -29,6 +29,7 @@ def scrape():
     article = soup.find('div', class_= 'list_text')
     news_data['article_title'] = article.find('a').text
     news_data['article_text'] = article.find('div', class_ = 'article_teaser_body').text
+    news_data['date'] = article.find('div', class_ = 'list_date').text #Decided to find the date too!
     mars_dict.update(news_data) #Add article title and text to Mars dictionary to return
 
     #####--JPL Mars Space Images - Featured Image--#####
