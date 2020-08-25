@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--Heading-->
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,15 +12,15 @@
 
 <body>
   <div class="container">
-    <!--Heading and button to scrape data-->
+    <!--Title and button to scrape data-->
     <div class="jumbotron text-center">
       <h1><strong>Mission to Mars</strong></h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
 
-    <!-- Mars Data -->
-    <div class= 'row' >
-      <div class = 'col-md-12'>
+    <!-- Mars most recent article title and text -->
+    <div class='row'>
+      <div class='col-md-12'>
         <h3><strong>Latest Mars News</strong></h3>
         <strong>{{ mars_data.article_title}}</strong>
         <br>
@@ -27,54 +28,61 @@
       </div>
       <br>
       <br>
-      <div class = 'col-md-8'>
+      <!--Mars featured image-->
+      <div class='col-md-8'>
         <h3><strong>Featured Mars Image</strong></h3>
-        <div class="thumbnail"><img src="{{ mars_data.Mars_Image }}" width = 100% alt="Featured Mars Image">
+        <div class="thumbnail"><img src="{{ mars_data.Mars_Image }}" width=100% alt="Featured Mars Image">
+        </div>
       </div>
-      </div>
+      <!--Mars table-->
       <div class="col-md-4">
         <h5><strong>Mars Facts</strong></h5>
         {{ mars_data.Mars_Facts_Table | safe }}
       </div>
       <br>
       <br>
-      <div class = 'col-md-12 text-center'>
-      <h3><strong>Mars Hemispheres</strong></h3>
-    </div>
-      <div class = 'col-md-6'>
-        <div class="thumbnail"> <img src="{{ mars_data.Hemispheres[0].img_url }}" width = 100% alt="Cerberus Hemisphere Enhanced">
-        <div class="card-body">
-          <h4 class="card-text text-center"><strong>{{ mars_data.Hemispheres[0].title }}</strong></h4>
-        </div>
+      <!--Mars hemispheres pictures and titles-->
+      <div class='col-md-12 text-center'>
+        <h3><strong>Mars Hemispheres</strong></h3>
       </div>
-  
-    </div>
-    <div class = 'col-md-6'>
-        <div class="thumbnail"><img src="{{ mars_data.Hemispheres[1].img_url }}" width = 100% alt="Schiaparelli Hemisphere Enhanced">
-        <div class="card-body">
-          <h4 class="card-text text-center"><strong>{{ mars_data.Hemispheres[1].title }}</strong></h4>
+      <div class='col-md-6'>
+        <div class="thumbnail"> <img src="{{ mars_data.Hemispheres[0].img_url }}" width=100%
+            alt="Cerberus Hemisphere Enhanced">
+          <div class="card-body">
+            <h4 class="card-text text-center"><strong>{{ mars_data.Hemispheres[0].title }}</strong></h4>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class = 'col-md-6'>
-      <div class="thumbnail"><img src="{{ mars_data.Hemispheres[2].img_url }}" width = 100% alt="Syrtis Major Hemisphere Enhanced">
-      <div class="card-body">
-        <h4 class="card-text text-center"><strong>{{ mars_data.Hemispheres[2].title }}</strong></h4>
       </div>
-    </div>
-    </div>
-    <div class = 'col-md-6'>
-      <div class="thumbnail"><img src="{{ mars_data.Hemispheres[3].img_url }}" width = 100% alt="Valles Marineris Hemisphere Enhanced">
-      <div class="card-body">
-        <h4 class="card-text text-center"><strong>{{ mars_data.Hemispheres[3].title }}</strong></h4>
+      <div class='col-md-6'>
+        <div class="thumbnail"><img src="{{ mars_data.Hemispheres[1].img_url }}" width=100%
+            alt="Schiaparelli Hemisphere Enhanced">
+          <div class="card-body">
+            <h4 class="card-text text-center"><strong>{{ mars_data.Hemispheres[1].title }}</strong></h4>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-md-6'>
+        <div class="thumbnail"><img src="{{ mars_data.Hemispheres[2].img_url }}" width=100%
+            alt="Syrtis Major Hemisphere Enhanced">
+          <div class="card-body">
+            <h4 class="card-text text-center"><strong>{{ mars_data.Hemispheres[2].title }}</strong></h4>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-6'>
+        <div class="thumbnail"><img src="{{ mars_data.Hemispheres[3].img_url }}" width=100%
+            alt="Valles Marineris Hemisphere Enhanced">
+          <div class="card-body">
+            <h4 class="card-text text-center"><strong>{{ mars_data.Hemispheres[3].title }}</strong></h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-
-  </div>
 </body>
-
 </html>
 
+<!--Do I need last 3 lines for bootstrap???-->
