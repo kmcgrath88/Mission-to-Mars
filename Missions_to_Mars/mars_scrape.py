@@ -58,7 +58,7 @@ def scrape():
     mars_facts_table_df = mars_facts_table_df.set_index('Description')
 
     #Converting data to a html table string
-    html_table = mars_facts_table_df.to_html(classes = 'table table-striped') 
+    html_table = mars_facts_table_df.to_html(classes = 'table') 
     html_table = html_table.replace('\n', '')
     mars_dict.update({'Mars_Facts_Table': html_table}) #Add table to Mars dictionary to return
 
