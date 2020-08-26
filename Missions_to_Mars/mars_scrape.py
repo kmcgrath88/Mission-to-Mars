@@ -9,9 +9,9 @@ def init_browser():
     executable_path = {"executable_path": "chromedriver.exe"}
     return Browser("chrome", **executable_path, headless=False)
 
-#Function to scrape information - similar steps to jupyter notebook
+#Function to scrape information - steps from jupyter notebook
 def scrape():
-    mars_dict = {} #Create mars dictionary to return
+    mars_dict = {} #Create new Mars dictionary to return
     browser = init_browser()
 
     #####--NASA Mars New Site--#####
