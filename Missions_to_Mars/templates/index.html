@@ -2,6 +2,7 @@
 <html lang="en">
 
 <!--Heading-->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +24,7 @@
       <div class='col-md-12'>
         <h3><strong>Latest Mars News</strong></h3>
         <p><strong>{{ mars_data.article_title}}</strong> - {{ mars_data.date }} <br>
-        {{ mars_data.article_text}}</p>
+          {{ mars_data.article_text}}</p>
       </div>
       <br>
       <br>
@@ -44,7 +45,25 @@
       <div class='col-md-12 text-center'>
         <h3><strong>Mars Hemispheres</strong></h3>
       </div>
-      <div class='col-md-6'>
+
+
+      {% for m in mars_data.Hemispheres %}
+      <!-- <div class = 'col-md-6'> -->
+      <div class= 'card'>
+        <img class='col-md-6 thumbnail card-img-top' src="{{ m.img_url }}" width=100% alt='Mars Hemispheres'>
+        <div class = 'card-body'>
+        <h4 class = 'card-text'><strong>{{ m.title }}</strong></h4>
+        {% endfor %}
+        </div>
+        
+      </div>
+      
+    
+    </div>
+  </div>
+
+
+  <!--<div class='col-md-6'>
         <div class="thumbnail"> <img src="{{ mars_data.Hemispheres[0].img_url }}" width=100%
             alt="Cerberus Hemisphere Enhanced">
           <div class="card-body">
@@ -77,11 +96,12 @@
             <h4 class="card-text text-center"><strong>{{ mars_data.Hemispheres[3].title }}</strong></h4>
           </div>
         </div>
-      </div>
-    </div>
+      </div> -->
+  </div>
   </div>
 
 </body>
+
 </html>
 
 <!--Do I need last 3 lines for bootstrap???-->
