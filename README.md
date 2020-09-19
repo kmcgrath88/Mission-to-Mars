@@ -16,7 +16,7 @@ First, my web application will scrape the latest news title, paragraph text, and
 Next, it will scrape the featured image from the [ JPL Featured Space Image ](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars). Here is an example: <br>
 ![alt text](Missions_to_Mars/Images/Image.png)<br>
 
-Next, my web application will scrape the [ Mars facts ](https://space-facts.com/mars/) and store them into a table. Here is an example: <br>
+Next, my web application will scrape [ Mars facts ](https://space-facts.com/mars/) and store them into a table. Here is an example: <br>
 ![alt text](Missions_to_Mars/Images/Facts.png)<br>
 
 Next, it will scrape images of [ Mars' hemispheres ](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars). Here is an example of two of the hemispheres: <br>
@@ -27,7 +27,7 @@ Finally, my web application will render all of this information on a single HTML
 <!--Built With-->
 ### Built With
 This project was built using the following frameworks:<br>
-* Python (Pandas, Splinter, Beautiful Soup, Flask Pymongo, Requests) in Jupyter Notebook
+* Python (Pandas, Splinter, Beautiful Soup, Flask Pymongo, Requests)
 * Flask
 * Bootstrap
 * HTML
