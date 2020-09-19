@@ -13,7 +13,7 @@ Thanks for checking out my project's repo! By downloading this repo, you'll be a
 First, my web application will scrape the latest news title, paragraph text, and date from the [ NASA Mars News Site ](https://mars.nasa.gov/news/?page=0&per_page=40&order=publish_date+desc%2Ccreated_at+desc&search=&category=19%2C165%2C184%2C204&blank_scope=Latest). Here is an example: <br>
 ![alt text](Missions_to_Mars/Images/News.png)<br>
 
-Next, it will scrape the featured image from the [ JPL Featured Space Image ](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars). Here is an example: <br>
+Next, it will scrape the [ JPL Featured Space Image ](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars). Here is an example: <br>
 ![alt text](Missions_to_Mars/Images/Image.png)<br>
 
 Next, my web application will scrape [ Mars facts ](https://space-facts.com/mars/) and store them into a table. Here is an example: <br>
