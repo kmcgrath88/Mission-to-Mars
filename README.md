@@ -27,7 +27,12 @@ Finally, my web application will render all of this information on a single HTML
 <!--Built With-->
 ### Built With
 This project was built using the following frameworks:<br>
-* Python (Pandas, Splinter, Beautiful Soup, Flask Pymongo, Requests)
+* Python 
+* Pandas
+* Splinter
+* Beautiful Soup 
+* Flask Pymongo
+* Requests
 * Flask
 * Bootstrap
 * HTML
