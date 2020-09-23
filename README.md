@@ -26,7 +26,7 @@ Finally, my web application will render all of this information on a single HTML
 
 <!--Built With-->
 ### Built With
-This project was built using the following frameworks:<br>
+This project was built using the following frameworks/libraries:<br>
 * Python 
 * Pandas
 * Splinter
